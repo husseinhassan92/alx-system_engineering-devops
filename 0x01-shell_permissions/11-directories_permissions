@@ -1,2 +1,2 @@
 #!/bin/bash
-chomd -R 755 /path
+chomd -R 755 /current directory
