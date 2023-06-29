@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script is displaying the content of dir 
+
+list="$(ls)"
+
+for i in $list
+do
+        echo "$i" | cut -d "-" -f2
+done
