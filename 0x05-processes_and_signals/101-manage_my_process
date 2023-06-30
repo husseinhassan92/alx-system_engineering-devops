@@ -17,14 +17,14 @@ killLoop()
 }
 case "$argv" in
     start) echo "manage_my_process started"
-	startLoop_n_createFile
+	startLoop
 	;;
     stop) echo "manage_my_process stopped"
-	killLoop_n_rmFile
+	killLoop
 	;;
     restart) echo "manage_my_process restarted"
-	killLoop_n_rmFile
-	startLoop_n_createFile
+	killLoop
+	startLoop
 	;;
     *) echo "Usage: manage_my_process {start|stop|restart}"
 	;;
