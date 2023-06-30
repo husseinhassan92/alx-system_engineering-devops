@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script creates to stop infinite loop that displays text with sleep 2
+
+pkill -f "4-to_infinity_and_beyond"
