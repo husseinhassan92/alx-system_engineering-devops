@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# display all processes (a): user-oriented (u), w/wo TTY (x), show heirachy (f)
+# shellcheck disable=SC2009
+
+pgrep -l "bash"
