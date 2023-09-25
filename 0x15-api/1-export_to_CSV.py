@@ -20,7 +20,7 @@ def to_csv():
         if todo['userId'] == int(argv[1]):
             TASKS.append((todo['completed'], todo['title']))
 
-    filename = '{}.csv'.format(argv[1])
+    filename = "{}.csv".format(argv[1])
     with open(filename, 'w') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for TASK in TASKS:
