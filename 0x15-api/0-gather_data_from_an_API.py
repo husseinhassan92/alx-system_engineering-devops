@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-
+"""
+Request from API; Return TODO list progress given employee ID
+"""
 import requests
 from sys import argv
 
 
 def display():
-    """"""
+    """return API data"""
     r_users = requests.get("https://jsonplaceholder.typicode.com/users")
     for user in r_users.json():
         if user['id'] == int(argv[1]):
