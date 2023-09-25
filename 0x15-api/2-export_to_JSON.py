@@ -27,8 +27,7 @@ def to_csv():
 
     filename = "{}.json".format(argv[1])
     with open(filename, 'w') as file:
-        for t in list:
-            json.dump({argv[1]: t}, file)
+        json.dump({argv[1]: list}, file)
 
 
 if __name__ == "__main__":
