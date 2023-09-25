@@ -7,7 +7,7 @@ import requests
 from sys import argv
 
 
-def to_csv():
+def to_json():
     """return API data"""
     r_users = requests.get("http://jsonplaceholder.typicode.com/users")
     for user in r_users.json():
@@ -31,4 +31,4 @@ def to_csv():
 
 
 if __name__ == "__main__":
-    to_csv()
+    to_json()
