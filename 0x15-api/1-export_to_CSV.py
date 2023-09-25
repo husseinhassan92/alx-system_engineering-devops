@@ -24,7 +24,7 @@ def to_csv():
     with open(filename, 'w') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for TASK in TASKS:
-            writer.writerow([argv[1], EMPLOYEE_NAME, TASK[0], TASK[1]])
+            writer.writerow([int(argv[1]), EMPLOYEE_NAME, TASK[0], TASK[1]])
 
 
 if __name__ == "__main__":
