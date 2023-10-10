@@ -6,7 +6,7 @@ Query Reddit API for number of subscribers for a given subreddit
 import requests
 
 
-def number_of_subscribers(subreddit):
+def top_ten(subreddit):
     """"""
     url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
     headers = {'user-agent': 'My User Agent 1.0'}
@@ -16,8 +16,6 @@ def number_of_subscribers(subreddit):
         print('None')
         return
     else:
-        data = response.json()
-        list = list(data.get('children'))
-        for t in list:
+        data = response.json().get('data')
+        for t in data.get('children'):
             print(t.get('data').get('title'))
-
