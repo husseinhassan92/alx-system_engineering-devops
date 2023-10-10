@@ -6,7 +6,7 @@ Query Reddit API for number of subscribers for a given subreddit
 import requests
 
 
-def recurse(subreddit, hot_list=[], after='', count=0):
+def recurse(subreddit, hot_list=[], after=None, count=0):
     """return all hot articles for a given subreddit
         return None if invalid subreddit given
     """
