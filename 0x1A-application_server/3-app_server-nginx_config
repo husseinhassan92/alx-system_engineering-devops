@@ -38,20 +38,15 @@ server {
                 alias /data/web_static/current/;
         }
 
-        #added this to point to Gunicorn instance created in /etc/init/airbnb-onepage.conf Upstart script
-        location /airbnb-onepage/ {
-                include proxy_params;
-                proxy_pass http://127.0.0.1:8000/;
-        }
-        #added this to point to Gunicorn instance created in /etc/init/airbnb-parameter.conf Upstart script
-        location /airbnb-parameter/ {
-                include proxy_params;
-                proxy_pass http://127.0.0.1:8001/;
-        }
-        location /airbnb-dynamic/ {
-                include proxy_params;
-                proxy_pass http://127.0.0.1:8001/;
-        }
+	# Serve /airbnb-onepage/ route on AirBnB_clone_v2
+    location = /airbnb-onepage/ {
+        proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+    }
+
+    # Serve /number_odd_or_even/ route on AirBnB_clone_v2
+    location ~ /number_odd_or_even/(\d+)$ {
+        proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+    }
 
         location / {
                 # First attempt to serve request as file, then
